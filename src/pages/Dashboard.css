@@ -1,0 +1,13 @@
+* {
+    background-color: black;
+}
+
+.dashboard-container {
+    padding: 20px;
+}
+
+.ag-theme-alpine {
+    height: 500px;
+    /* Adjust the height as needed */
+    width: 100%;
+}

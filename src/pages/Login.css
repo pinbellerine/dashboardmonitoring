@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    background-color: #131416;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #ADF777;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: -1;
+    animation: moveElipse 5s infinite alternate;
+}
+
+body::before {
+    top: -100px;
+    left: -100px;
+}
+
+body::after {
+    bottom: -100px;
+    right: -100px;
+}
+
+@keyframes moveElipse {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(100px, 100px);
+    }
+}
+
+section {
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.login-container {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 100%;
+    background-color: rgba(19, 20, 22, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeInSlide 1s ease-in-out forwards;
+}
+
+.login-card {
+    flex: 1;
+    border-radius: 10px;
+    margin: 1rem;
+    padding: 2rem;
+    opacity: 0;
+    animation: slideInLeft 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.login-card .logo {
+    width: 40%;
+}
+
+.login-card h1 {
+    margin-top: 0.75rem;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.login-card p {
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.login-card label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.login-card input {
+    margin-bottom: 15px;
+    padding: 12px; /* Padding yang lebih baik */
+    border: 1px solid #2C2D30; /* Border tambahan */
+    border-radius: 8px; /* Rounded corners yang lebih besar */
+    background-color: #2C2D30;
+    color: #fff;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transisi untuk fokus */
+}
+
+.login-card input::placeholder {
+    color: #B3B3B3; /* Placeholder yang lebih cerah */
+}
+
+.login-card input:focus {
+    border-color: #ADF777; /* Warna border saat fokus */
+    outline: none; /* Menghilangkan outline default */
+    box-shadow: 0 0 8px rgba(173, 247, 119, 0.5); /* Efek bayangan saat fokus */
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #ADF777;
+}
+
+.password-container input {
+    flex: 1;
+    padding-right: 40px;
+    font-size: 14px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-80%);
+    cursor: pointer;
+}
+
+.login-card button {
+    padding: 10px;
+    background-color: #ADF777;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+    transition: background-color 0.3s; /* Transisi untuk hover */
+    animation: buttonPulse 1.5s infinite;
+}
+
+.login-card button:hover {
+    background-color: #8cd856; /* Warna saat hover */
+}
+
+.forgot-password {
+    color: #ADF777;
+    text-decoration: none;
+    font-size: 13px;
+    margin-top: -10px;
+    text-align: right;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-card .register-page {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+.login-card .register-page a {
+    color: #AEFA78;
+}
+
+.login-illustration {
+    flex: 1;
+    background-color: #2C2D30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: #fff;
+    border-radius: 10px;
+    opacity: 0;
+    animation: slideInRight 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.login-illustration img {
+    margin-top: -30px;
+    width: 350px;
+    height: auto;
+}
+
+.login-illustration p {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+}
+
+@keyframes fadeInSlide {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes buttonPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
